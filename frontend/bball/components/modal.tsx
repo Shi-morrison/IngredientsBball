@@ -23,7 +23,8 @@ export default function Modal() {
             {modal && (<div className='modal'>
                 <div onClick={toggleModal} className="overlay"></div>
                 <div className="modal-content">
-                    <h2>Modal</h2>
+                    <h2>Player Pic</h2>
+                    <h2>Player name</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto qui asperiores, maiores culpa, delectus amet iure, iusto mollitia esse ex temporibus. Iste, amet rerum. Iure deleniti eius numquam architecto accusantium!</p>
                     <button onClick={toggleModal} className='close-modal'>Close</button>
                 </div>
