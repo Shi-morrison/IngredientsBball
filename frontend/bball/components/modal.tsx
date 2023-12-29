@@ -1,19 +1,28 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/modal.css';
 export default function Modal() {
 
-    const [modal, setModal] = useState(false);
+    const [modal, setModal] = useState<boolean>(false);
 
     const toggleModal = () => {
         setModal(!modal);
     }
 
-    if (modal) {
-        document.body.classList.add('active-modal')
-    } else {
-        document.body.classList.remove('active-modal')
-    }
+    useEffect(() => {
+        // This code runs after the component mounts and whenever 'modal' changes.
+        if (modal) {
+            document.body.classList.add('active-modal');
+        } else {
+            document.body.classList.remove('active-modal');
+        }
+
+        // Cleanup function: This runs before the component is unmounted, and before each re-render.
+        return () => {
+            document.body.classList.remove('active-modal');
+        };
+    }, [modal]); // Dependencies array, the effect will re-run if these values change.
+
 
     return (
         <>

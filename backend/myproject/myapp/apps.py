@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class BballstatsConfig(AppConfig):
+class MyappConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'bballStats'
+    name = 'myapp'
